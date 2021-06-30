@@ -1,0 +1,11 @@
+/Library/
+/Temp/
+/.vs/
+*.csproj
+*.sln
+/obj/
+/bin/
+/.vscode/
+/AndroidProject/
+/Logs/
+/Recordings/
