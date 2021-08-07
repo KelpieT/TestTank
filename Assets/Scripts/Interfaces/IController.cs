@@ -4,5 +4,5 @@ using UnityEngine;
 
 namespace TankGame
 {
-	public interface IController : IBaseController { }
+	public interface IController { }
 }
