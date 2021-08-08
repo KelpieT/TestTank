@@ -7,5 +7,7 @@ namespace TankGame
 	{
 		public IDamageble damageble;
 		public BulletData bulletData;
+		public abstract void Fire();
+        protected void Collide(){}
 	}
 }
