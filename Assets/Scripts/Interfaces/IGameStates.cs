@@ -1,18 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class IGameStates : MonoBehaviour
+namespace TankGame
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public interface IGameStates
+	{
+		void StartGame();
+		void FinishGame();
+		void RestartGame();
+	}
 }

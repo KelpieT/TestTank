@@ -8,6 +8,8 @@ namespace TankGame
 		void Start()
 		{
 			InitController();
+			InitHealthData(tankData);
+			armor = new MainArmor(tankData);
 		}
 		public override void InitController()
 		{

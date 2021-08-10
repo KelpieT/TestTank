@@ -8,6 +8,22 @@ namespace TankGame
 		public IDamageble damageble;
 		public BulletData bulletData;
 		public abstract void Fire();
-        protected void Collide(){}
+		protected abstract void Collide(Collider col);
+		protected bool CheckNull()
+		{
+			return damageble == null || bulletData == null;
+		}
+		void OnTriggerEnter(Collider col)
+		{
+			Collide(col);
+		}
+		void OnEnable()
+		{
+			Invoke(nameof(DestroyByTime), bulletData.LifeTimeBullet);
+		}
+		void DestroyByTime()
+		{
+			Destroy(gameObject);
+		}
 	}
 }

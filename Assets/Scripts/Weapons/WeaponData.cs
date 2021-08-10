@@ -9,5 +9,6 @@ namespace TankGame
 	{
 		public float fireRatePerSecond = -1;
 		public Bullet bullet;
+		public float damagePerBullet;
 	}
 }

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1363537fa6570ea489be96885eedea3b, type: 3}
   m_Name: TankData
   m_EditorClassIdentifier: 
-  MoveSpeed: 0.1
+  MoveSpeed: 0.15
   MoveSpeedLerp: 30
-  RotateSpeed: 3
+  RotateSpeed: 5
   RotateSpeedLerp: 30
+  minHealth: 0
+  maxHealth: 20
+  armor: 0.676
