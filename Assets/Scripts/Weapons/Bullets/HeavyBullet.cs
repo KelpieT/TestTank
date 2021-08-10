@@ -6,10 +6,13 @@ namespace TankGame
 	public class HeavyBullet : Bullet
 	{
 		public Rigidbody rb;
+		Vector3 direction = new Vector3(0, 1, 1);
+		int maxColliders = 100;
 		public override void Fire()
 		{
 			if (bulletData == null) return;
-			Vector3 dir = transform.rotation * new Vector3(0, 1, 1).normalized * bulletData.Speed;
+			
+			Vector3 dir = transform.rotation * direction.normalized * bulletData.Speed;
 			rb.AddForce(dir, ForceMode.Impulse);
 		}
 
@@ -21,7 +24,6 @@ namespace TankGame
 		}
 		void Explode()
 		{
-			int maxColliders = 100;
 			Collider[] hitColliders = new Collider[maxColliders];
 			int numColliders = Physics.OverlapSphereNonAlloc(transform.position, bulletData.ExplosionRadius, hitColliders);
 			for (int i = 0; i < numColliders; i++)

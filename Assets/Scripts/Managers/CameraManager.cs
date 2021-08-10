@@ -11,6 +11,8 @@ namespace TankGame
 		public Vector3 offsetTarget;
 		Transform target;
 		bool needFollow;
+		Vector3 currentVelocity;
+		public float smoothTime = 0.15f;
 
 		public void FinishGame()
 		{
@@ -32,13 +34,13 @@ namespace TankGame
 		{
 			if (!needFollow) return;
 			if (target == null) return;
-			transform.position = Vector3.Lerp(transform.position, target.position + offsetTarget, 30 * Time.deltaTime);
+			transform.position = Vector3.SmoothDamp(transform.position, target.position + offsetTarget, ref currentVelocity, smoothTime);
 		}
 
 		void Awake()
 		{
 			Instance = this;
 		}
-		void Update() => FollowPlayer();
+		void FixedUpdate() => FollowPlayer();
 	}
 }

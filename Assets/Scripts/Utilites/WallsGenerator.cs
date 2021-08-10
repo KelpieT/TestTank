@@ -7,6 +7,7 @@ namespace TankGame
 
 	public class WallsGenerator : MonoBehaviour
 	{
+		private const float MAX_ANGLE = 360f;
 		public GameObject wallPrefab;
 		public Vector3 minWallSize;
 		public Vector3 maxWallSize;
@@ -32,7 +33,7 @@ namespace TankGame
 					Vector3 randomSize = RandomVector3(minWallSize, maxWallSize);
 					Vector3 pos = new Vector3(gridSize * i + gridSize * randomX, randomSize.y / 2, gridSize * j + gridSize * randomZ);
 					pos += minB;
-					Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
+					Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, MAX_ANGLE), 0);
 					GameObject g = Instantiate(wallPrefab, pos, randomRotation, parentWalls);
 					g.transform.localScale = randomSize;
 				}
